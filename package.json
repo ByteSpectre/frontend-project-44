@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MikhailManzik/frontend-project-lvl1.git"
+    "url": "git+https://github.com/Moshi231/frontend-project-44.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MikhailManzik/frontend-project-lvl1/issues"
+    "url": "https://github.com/Moshi231/frontend-project-44/issues"
   },
-  "homepage": "https://github.com/MikhailManzik/frontend-project-lvl1#readme",
+  "homepage": "https://github.com/Moshi231/frontend-project-44#readme",
   "type": "module",
   "dependencies": {
     "readline-sync": "^1.4.10"
