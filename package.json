@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Gruf1/frontend-project-44.git"
+    "url": "git+https://github.com/Moshi231/frontend-project-44.git"
   },
   "author": "Andrey Nikonov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Gruf1/frontend-project-44/issues"
+    "url": "https://github.com/Moshi231/frontend-project-44/issues"
   },
-  "homepage": "https://github.com/Gruf1/frontend-project-44#readme",
+  "homepage": "https://github.com/Moshi231/frontend-project-44#readme",
   "dependencies": {
     "readline-sync": "^1.4.10"
   },
