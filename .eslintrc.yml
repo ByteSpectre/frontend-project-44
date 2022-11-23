@@ -11,5 +11,4 @@ rules: {
   no-console: 0,
   import/extensions: 0
 }
-/*eslint linebreak-style: ["error", "windows"]*/
-eslint --fix
+/*eslint linebreak-style: ["error", "unix"]*/
