@@ -1,5 +1,6 @@
 ## Проект "Игры Разума":
 <a href="https://codeclimate.com/github/Moshi231/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/52805e94c8c0351eb573/maintainability" /></a>
+<a href="https://github.com/Moshi231/frontend-project-44/actions"><img onerror="this.src='https://github.com/github/docs/actions/workflows/main.yml/badge.svg';" src="https://github.com/Moshi231/frontend-project-44/workflows/hexlet-check/badge.svg">
 ## Описание проекта
 __"Игры разума"__ : это проект состоящий из 5 консольных игр, для тренировки вашего мозга. Каждая игра задает по 3 вопроса, на которые нужо дать правильные ответы. Если вы ответили на все вопросы, считается что вы прошли игру. В случае неправильного ответа игра завершится и вам будет предложено попробовать еще раз.
 
