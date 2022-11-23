@@ -1,32 +1,21 @@
-import generateRandomNumber from '../generateRandomNumber.js';
-import { numberOfQuestions, gameEngine } from '../index.js';
+#!/usr/bin/env node
+import { getRandomNumber } from '../utils.js';
+import run from '../index.js';
 
-// Нахождение наибольшего общего делителя через алгоритм Евклида
-const findGCD = (a, b) => {
-  if (b === 0) {
-    return a;
-  }
-  return findGCD(b, a % b);
+const description = 'Find the greatest common divisor of given numbers.';
+const minRange = 0;
+const maxRange = 10;
+
+const getGCD = (x, y) => (y === 0 ? x : getGCD(y, x % y));
+
+const generateRound = () => {
+  const number1 = getRandomNumber(minRange, maxRange);
+  const number2 = getRandomNumber(minRange, maxRange);
+  const question = `${number1} ${number2}`;
+  const correctAnswer = getGCD(number1, number2).toString();
+  return [question, correctAnswer];
 };
 
-// Задание
-const task = 'Write the greatest common divisor (GCD) of given numbers.';
-
-// Формирования пар "вопрос-ответ"
-const generateGameData = () => {
-  const gameData = [];
-
-  for (let i = 0; i < numberOfQuestions; i += 1) {
-    const firstNum = generateRandomNumber(1, 100);
-    const secondNum = generateRandomNumber(1, 100);
-
-    const question = `${firstNum} and ${secondNum}`;
-    const correctAnswer = findGCD(firstNum, secondNum);
-
-    gameData.push([question, String(correctAnswer)]);
-  }
-
-  return gameData;
+export default () => {
+  run(description, generateRound);
 };
-
-export default () => gameEngine(task, generateGameData());

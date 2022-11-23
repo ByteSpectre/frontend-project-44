@@ -1,38 +1,31 @@
-import generateRandomNumber from '../generateRandomNumber.js';
-import { numberOfQuestions, gameEngine } from '../index.js';
+#!/usr/bin/env node
+import { getRandomNumber } from '../utils.js';
+import run from '../index.js';
 
-// Функция определяет, является ли число простым
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const minRange = 0;
+const maxRange = 100;
+
 const isPrime = (number) => {
-  if (number < 2) {
+  const limit = Math.sqrt(number);
+  if (number <= 1) {
     return false;
   }
-
-  for (let i = 2; i <= number / 2; i += 1) {
+  for (let i = 2; i <= limit; i += 1) {
     if (number % i === 0) {
       return false;
     }
   }
-
   return true;
 };
 
-// Задание
-const task = 'Answer "yes" if the number is prime. Otherwise answer "no".';
-
-// Формирования пар "вопрос-ответ"
-const generateGameData = () => {
-  const gameData = [];
-
-  for (let i = 0; i < numberOfQuestions; i += 1) {
-    const number = generateRandomNumber(1, 1000);
-
-    const question = `Is ${number} a prime number?`;
-    const correctAnswer = isPrime(number) ? 'yes' : 'no';
-
-    gameData.push([question, correctAnswer]);
-  }
-
-  return gameData;
+const generateRound = () => {
+  const number = getRandomNumber(minRange, maxRange);
+  const question = number.toString();
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
+  return [question, correctAnswer];
 };
 
-export default () => gameEngine(task, generateGameData());
+export default () => {
+  run(description, generateRound);
+};

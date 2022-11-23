@@ -1,6 +1,4 @@
 #!/usr/bin/env node
+import runGcd from '../src/games/gcd.js';
 
-// GCD - greatest common divisor
-import brainGCD from '../src/games/gcd.js';
-
-brainGCD();
+runGcd();

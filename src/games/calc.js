@@ -1,42 +1,34 @@
-import generateRandomNumber from '../generateRandomNumber.js';
-import { numberOfQuestions, gameEngine } from '../index.js';
+#!/usr/bin/env node
+import { getRandomNumber, getRandomIndex } from '../utils.js';
+import run from '../index.js';
 
-// Простейшие арифметические операции
-const expressionCalculate = (a, b, oper) => {
-  switch (oper) {
+const description = 'What is the result of the expression?';
+const operators = ['+', '-', '*'];
+const minRange = 0;
+const maxRange = 50;
+
+const calculate = (x, y, operator) => {
+  switch (operator) {
     case '+':
-      return a + b;
+      return x + y;
     case '-':
-      return a - b;
+      return x - y;
     case '*':
-      return a * b;
-    case '/':
-      return a / b;
+      return x * y;
     default:
-      return NaN;
+      throw new Error(`There is no such operator like '${operator}'!`);
   }
 };
 
-// Задание
-const task = 'Write the result of the expressions:';
-
-// Формирования пар "вопрос-ответ"
-const generateGameData = () => {
-  const gameData = [];
-
-  for (let i = 0; i < numberOfQuestions; i += 1) {
-    const firstNum = generateRandomNumber(1, 10);
-    const secondNum = generateRandomNumber(1, 10);
-    const operators = ['+', '-', '*'];
-    const operator = operators[generateRandomNumber(0, operators.length - 1)];
-
-    const question = `${firstNum} ${operator} ${secondNum} = ?`;
-    const correctAnswer = expressionCalculate(firstNum, secondNum, operator);
-
-    gameData.push([question, String(correctAnswer)]);
-  }
-
-  return gameData;
+const generateRound = () => {
+  const number1 = getRandomNumber(minRange, maxRange);
+  const number2 = getRandomNumber(minRange, maxRange);
+  const operator = operators[getRandomIndex(operators)];
+  const question = `${number1} ${operator} ${number2}`;
+  const correctAnswer = calculate(number1, number2, operator).toString();
+  return [question, correctAnswer];
 };
 
-export default () => gameEngine(task, generateGameData());
+export default () => {
+  run(description, generateRound);
+};
