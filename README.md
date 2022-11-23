@@ -7,7 +7,7 @@ __"Игры разума"__ : это проект состоящий из 5 ко
 ### Установка
 
 ```
-npm i
+npm install https://github.com/Moshi231/frontend-project-44
 ```
 ```
 npm link
