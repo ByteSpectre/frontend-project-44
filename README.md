@@ -21,7 +21,7 @@ brain-even
 ### Описание игры:
 Пользователю показывается случайное число. И ему нужно ответить yes, если число чётное, или no — если нечётное.
 ### Запуск игры: __"brain-even"__
-(https://asciinema.org/a/gV7GtnOjF155hMVklh3tcLMRh.svg)](https://asciinema.org/a/gV7GtnOjF155hMVklh3tcLMRh)
+[![asciicast](https://asciinema.org/a/gV7GtnOjF155hMVklh3tcLMRh.svg)](https://asciinema.org/a/gV7GtnOjF155hMVklh3tcLMRh)
 
 запускает игру "Калькулятор"
 ```
